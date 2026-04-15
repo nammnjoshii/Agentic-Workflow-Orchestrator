@@ -7,7 +7,7 @@ last_updated: 2026-03-09
 
 ## Purpose
 
-Replace 5–10 hours/week of manual BD research. The agent runs autonomously on GitHub Actions: scrapes procurement portals daily, scores RFPs, discovers contacts, and delivers a digest every Monday morning.
+Replace 5–10 hours/week of manual BD research. The agent runs autonomously on GitHub Actions: scrapes procurement portals daily, scores RFPs, discovers contacts, and delivers a digest every Monday morning. Projected impact: $1.2M net new revenue per year from high-quality bids; $250k and 500+ hours saved annually in non-billable effort.
 
 ---
 

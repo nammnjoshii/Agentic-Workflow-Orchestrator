@@ -73,8 +73,13 @@ flowchart TD
 
 ## Impact
 
-- Reduced manual procurement analysis effort by 5–10 hours per week
-- Improved opportunity signal-to-noise ratio from ~1:40 to ~1:5
+| Metric | Value |
+|---|---|
+| Net new revenue per year | $1.2M from high-quality bids |
+| Annual cost savings | $250k in non-billable effort |
+| Time savings | 500+ hours per year |
+| Signal-to-noise ratio | Improved from ~1:40 to ~1:5 |
+
 - Standardised evaluation across inconsistent public sector data sources
 - Enabled repeatable, auditable business development workflows with zero manual trigger
 
