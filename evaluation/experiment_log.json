@@ -1,0 +1,74 @@
+{
+  "experiments": [
+    {
+      "version": "v1.0",
+      "title": "base-architecture",
+      "date": "2026-03-10",
+      "dataset": "test_dataset_v1",
+      "metrics": {
+        "decision_accuracy": 0.8,
+        "relevance_score": 7.93,
+        "reasoning_quality": 6.5,
+        "hallucination_rate": 0.0,
+        "coverage": 1.0,
+        "average_confidence": 0.8,
+        "evidence_grounding": 1.0,
+        "risk_identification_accuracy": 0.0333,
+        "confidence_calibration": 0.0,
+        "consistency": 1.0,
+        "differentiation_insight": 8.0,
+        "strategic_depth_score": 5.85,
+        "real_business_value": 7.33,
+        "tokens_used": 36000,
+        "runtime_seconds": 2.14
+      }
+    },
+    {
+      "version": "v2.0",
+      "title": "v2-pipeline",
+      "date": "2026-03-10",
+      "dataset": "test_dataset_v1",
+      "metrics": {
+        "decision_accuracy": 0.8,
+        "relevance_score": 8.69,
+        "reasoning_quality": 6.5,
+        "hallucination_rate": 0.0,
+        "coverage": 1.0,
+        "average_confidence": 0.8,
+        "evidence_grounding": 1.0,
+        "risk_identification_accuracy": 0.0333,
+        "confidence_calibration": 0.0,
+        "consistency": 1.0,
+        "differentiation_insight": 8.0,
+        "strategic_depth_score": 5.85,
+        "real_business_value": 7.56,
+        "tokens_used": 36000,
+        "runtime_seconds": 2.18
+      }
+    }
+  ,
+    {
+      "version": "v3.0",
+      "title": "bcbid-separation",
+      "date": "2026-03-10",
+      "dataset": "test_dataset_v1",
+      "metrics": {
+        "decision_accuracy": 0.8,
+        "relevance_score": 8.69,
+        "reasoning_quality": 6.5,
+        "hallucination_rate": 0.0,
+        "coverage": 1.0,
+        "average_confidence": 0.8,
+        "evidence_grounding": 1.0,
+        "risk_identification_accuracy": 0.0333,
+        "confidence_calibration": 0.0,
+        "consistency": 1.0,
+        "differentiation_insight": 8.0,
+        "strategic_depth_score": 5.85,
+        "real_business_value": 7.56,
+        "tokens_used": 36000,
+        "runtime_seconds": 1.66
+      }
+    }
+  ]
+}

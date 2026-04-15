@@ -1,0 +1,75 @@
+name: Weekly Digest
+
+on:
+  schedule:
+    - cron: '0 16 * * 1'
+  workflow_dispatch:
+
+concurrency:
+  group: pipeline
+
+jobs:
+  digest:
+    runs-on: ubuntu-latest
+    env:
+      FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true
+    permissions:
+      actions: read
+      contents: read
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - run: pip install -r requirements.txt
+
+      - run: playwright install chromium
+
+      - name: Find latest DB artifact run
+        id: latest-artifact
+        uses: actions/github-script@v7
+        with:
+          script: |
+            const artifacts = await github.rest.actions.listArtifactsForRepo({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              name: 'opportunity-db',
+              per_page: 5,
+            });
+            const valid = artifacts.data.artifacts.filter(a => !a.expired);
+            if (valid.length > 0) {
+              core.setOutput('run_id', String(valid[0].workflow_run.id));
+              core.setOutput('found', 'true');
+            } else {
+              core.setOutput('found', 'false');
+            }
+
+      - uses: actions/download-artifact@v4
+        if: steps.latest-artifact.outputs.found == 'true'
+        with:
+          name: opportunity-db
+          path: data/
+          run-id: ${{ steps.latest-artifact.outputs.run_id }}
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+        continue-on-error: true
+
+      - run: python main.py digest
+        env:
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+          RESEND_API_KEY: ${{ secrets.RESEND_API_KEY }}
+          DIGEST_SENDER: ${{ secrets.DIGEST_SENDER }}
+          DIGEST_RECIPIENT: ${{ secrets.DIGEST_RECIPIENT }}
+          HUNTER_API_KEY: ${{ secrets.HUNTER_API_KEY }}
+          SERPAPI_KEY: ${{ secrets.SERPAPI_KEY }}
+          AGENT_TIMEOUT_SECONDS: 120
+
+      - uses: actions/upload-artifact@v4
+        with:
+          name: opportunity-db
+          path: data/opportunities.db
+          retention-days: 90
+          overwrite: true
+          if-no-files-found: warn

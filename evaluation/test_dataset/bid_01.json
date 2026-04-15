@@ -1,0 +1,29 @@
+{
+  "bid_id": "bid_01",
+  "title": "Snowflake Cloud Data Warehouse and Analytics Platform",
+  "org": "BC Hydro",
+  "deadline": "2026-06-15",
+  "value": "$750,000",
+  "url": "https://eval.dataset.local/rfp/bid_01",
+  "source": "MERX",
+  "raw_description": "BC Hydro is seeking a qualified vendor to design, implement, and support a Snowflake-based cloud data warehouse. The scope includes migration of legacy Oracle data marts, ETL/ELT pipeline development using dbt, Power BI dashboard creation, and data governance framework implementation. The vendor must demonstrate proven Snowflake SnowPro Core and Advanced certifications, experience with large-scale data migration in regulated utilities environments, and a strong track record with BC public-sector clients. Preferred capabilities include Azure Data Factory integration, automated data quality testing, and executive-level reporting. Contract term: 2 years with two 1-year renewal options.",
+  "ground_truth": {
+    "decision": "bid",
+    "min_score": 75,
+    "max_score": null,
+    "expected_risks": [
+      "incumbent vendor",
+      "Oracle migration complexity",
+      "regulated utilities compliance"
+    ],
+    "expected_capabilities": [
+      "Snowflake",
+      "ETL/ELT pipelines",
+      "Power BI",
+      "dbt",
+      "data governance",
+      "Azure Data Factory"
+    ],
+    "rationale": "Perfect capability match — Snowflake, dbt, Power BI, ETL/ELT pipelines, and data governance are all the client's primary capabilities. BC Hydro is an ideal client profile (Crown corporation, regulated sector). Contract value in target range."
+  }
+}

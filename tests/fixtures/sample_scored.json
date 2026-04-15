@@ -1,0 +1,18 @@
+{
+  "relevance_score": 85,
+  "recommendation": "PURSUE",
+  "score_rationale": "Strong match on primary capabilities — Snowflake, ETL/ELT pipelines, and Power BI are all core the client organization offerings. BC Hydro is an ideal Crown corporation client within the target contract range.",
+  "capability_match": [
+    "Snowflake",
+    "ETL/ELT pipelines",
+    "Power BI",
+    "Data governance"
+  ],
+  "risks": [
+    "Incumbent vendor may have existing relationship with BC Hydro"
+  ],
+  "estimated_effort": "L",
+  "exec_summary": "BC Hydro is procuring a Snowflake-based data warehouse and analytics platform with Power BI integration and data governance. The scope aligns directly with the client's primary capabilities and ideal client profile. Contract value of $500K sits squarely within target range.",
+  "suggested_angle": "Lead with Snowflake delivery track record and reference BC Hydro-scale Power BI deployments to differentiate on proven Crown corporation experience.",
+  "decision_log": []
+}

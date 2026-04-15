@@ -1,0 +1,28 @@
+{
+  "bid_id": "bid_02",
+  "title": "Enterprise Business Intelligence Dashboard Modernization",
+  "org": "City of Vancouver",
+  "deadline": "2026-05-30",
+  "value": "$400,000",
+  "url": "https://eval.dataset.local/rfp/bid_02",
+  "source": "CanadaBuys",
+  "raw_description": "The City of Vancouver is modernizing its enterprise reporting infrastructure. The project requires migration from legacy Crystal Reports to a modern BI platform (Power BI or Tableau), development of 40+ operational dashboards for city departments, implementation of a self-service analytics layer, and staff training. The vendor should have demonstrated experience with municipal data, public-sector procurement compliance, and multi-stakeholder project delivery. Integration with SAP financials and Salesforce CRM is required. Deliverables include a BI architecture blueprint, data catalogue, and governance policy.",
+  "ground_truth": {
+    "decision": "bid",
+    "min_score": 72,
+    "max_score": null,
+    "expected_risks": [
+      "SAP integration complexity",
+      "multi-stakeholder coordination",
+      "public sector procurement timeline"
+    ],
+    "expected_capabilities": [
+      "Power BI",
+      "Tableau",
+      "data governance",
+      "SAP integration",
+      "self-service analytics"
+    ],
+    "rationale": "Strong match — Power BI, Tableau, data governance, and self-service analytics align directly with Your Organization core capabilities. City of Vancouver is a high-value BC municipal client. $400K in target range."
+  }
+}

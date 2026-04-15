@@ -1,0 +1,102 @@
+[
+  {
+    "id": "golden-001",
+    "title": "Crown Corporation Snowflake Data Warehouse Implementation",
+    "org": "BC Hydro",
+    "domain_keywords": ["Snowflake", "data warehouse", "analytics", "Crown corporation", "ETL"],
+    "expected_score": 88,
+    "expected_recommendation": "PURSUE",
+    "rationale": "Strong primary capability match on Snowflake and ETL pipelines with an ideal Crown corporation client. Contract value and duration sit within the client's target range.",
+    "active": true
+  },
+  {
+    "id": "golden-002",
+    "title": "Federal Government Power BI Dashboard Suite",
+    "org": "Public Services and Procurement Canada",
+    "domain_keywords": ["Power BI", "dashboard", "federal", "reporting", "business intelligence"],
+    "expected_score": 82,
+    "expected_recommendation": "PURSUE",
+    "rationale": "Direct match on Power BI and public sector reporting, which are primary the client organization capabilities. Federal client and contract scale are ideal.",
+    "active": true
+  },
+  {
+    "id": "golden-003",
+    "title": "Municipal Data Governance Framework",
+    "org": "City of Calgary",
+    "domain_keywords": ["data governance", "municipal", "data cataloguing", "lineage", "quality"],
+    "expected_score": 79,
+    "expected_recommendation": "PURSUE",
+    "rationale": "Primary match on data governance and lineage capabilities. Municipal government is within ideal client profile.",
+    "active": true
+  },
+  {
+    "id": "golden-004",
+    "title": "Provincial ML Pipeline for Benefits Administration",
+    "org": "BC Ministry of Social Development",
+    "domain_keywords": ["ML pipeline", "machine learning", "provincial", "predictive", "analytics"],
+    "expected_score": 68,
+    "expected_recommendation": "CONSIDER",
+    "rationale": "Secondary capability match on ML pipelines. Provincial client is suitable but domain is adjacent rather than core.",
+    "active": true
+  },
+  {
+    "id": "golden-005",
+    "title": "City Digital Transformation Strategy",
+    "org": "City of Edmonton",
+    "domain_keywords": ["digital transformation", "strategy", "municipal", "roadmap", "technology"],
+    "expected_score": 55,
+    "expected_recommendation": "CONSIDER",
+    "rationale": "Partial match on digital transformation strategy as a secondary capability. Strategy-only scope limits technical delivery component.",
+    "active": true
+  },
+  {
+    "id": "golden-006",
+    "title": "Provincial Highway Construction and Maintenance",
+    "org": "BC Ministry of Transportation",
+    "domain_keywords": ["highway", "construction", "infrastructure", "roads", "civil engineering"],
+    "expected_score": 4,
+    "expected_recommendation": "SKIP",
+    "rationale": "Disqualifier present: civil engineering and physical infrastructure. No data or analytics component.",
+    "active": true
+  },
+  {
+    "id": "golden-007",
+    "title": "Medical Device Procurement and Inventory",
+    "org": "Health Canada",
+    "domain_keywords": ["medical device", "procurement", "healthcare", "clinical", "inventory"],
+    "expected_score": 3,
+    "expected_recommendation": "SKIP",
+    "rationale": "Disqualifier present: medical devices and clinical healthcare delivery. Outside the client's domain entirely.",
+    "active": true
+  },
+  {
+    "id": "golden-008",
+    "title": "Court Administration Staffing Services",
+    "org": "BC Ministry of Attorney General",
+    "domain_keywords": ["court", "administration", "staffing", "legal", "judicial"],
+    "expected_score": 8,
+    "expected_recommendation": "SKIP",
+    "rationale": "Two disqualifiers present: legal services and staffing-only engagement. No deliverable analytics output.",
+    "active": true
+  },
+  {
+    "id": "golden-009",
+    "title": "Government IT Hardware Refresh Program",
+    "org": "Shared Services Canada",
+    "domain_keywords": ["hardware", "IT", "refresh", "servers", "procurement"],
+    "expected_score": 12,
+    "expected_recommendation": "SKIP",
+    "rationale": "Disqualifier present: hardware procurement and physical asset management. Software consulting is out of scope.",
+    "active": true
+  },
+  {
+    "id": "golden-010",
+    "title": "Federal Legal Services Retainer",
+    "org": "Department of Justice Canada",
+    "domain_keywords": ["legal", "services", "retainer", "counsel", "law"],
+    "expected_score": 5,
+    "expected_recommendation": "SKIP",
+    "rationale": "Disqualifier present: legal services. No analytical or data component in scope.",
+    "active": true
+  }
+]

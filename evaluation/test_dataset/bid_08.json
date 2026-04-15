@@ -1,0 +1,22 @@
+{
+  "bid_id": "bid_08",
+  "title": "General IT Staffing and Application Support Services",
+  "org": "BC Ministry of Citizens Services",
+  "deadline": "2026-05-01",
+  "value": "$150,000",
+  "url": "https://eval.dataset.local/rfp/bid_08",
+  "source": "BCBid",
+  "raw_description": "The BC Ministry of Citizens Services requires contract staff augmentation for application support and maintenance of internal government web portals. Roles required: 2 Java developers, 1 QA analyst, 1 project coordinator. Skills required: Java Spring Boot, Oracle DB administration, JIRA, and government IMIT standards. No specific data analytics or business intelligence work is included. Duration: 12 months. Vendors must be on the BC ProServices standing offer list. This is a staffing-only engagement — no deliverables beyond staff hours.",
+  "ground_truth": {
+    "decision": "pass",
+    "min_score": null,
+    "max_score": 40,
+    "expected_risks": [
+      "staffing-only scope — Your Organization disqualifier",
+      "Java/QA skills outside Your Organization core",
+      "ProServices list requirement"
+    ],
+    "expected_capabilities": [],
+    "rationale": "Disqualifier: staffing-only engagement. No data analytics content. Your Organization does not compete in staff augmentation. Should be filtered at qualification stage (filter_score < 60)."
+  }
+}

@@ -1,0 +1,42 @@
+.env
+*.db
+__pycache__/
+.playwright/
+data/*.db
+bcbid_session.json
+
+# Portfolio public repo — excluded content
+Raw/
+experiments/
+skills/
+Claude-Code-Usage-Monitor/
+claude-skills-main/
+*.pptx
+*.docx
+*.pdf
+*.cast
+*.xlsx
+*.gif
+bid-intelligence-*.html
+bid-intelligence_*.html
+Scoring\ Criteria.xlsx
+bc_bid_supplier_guide_responding.pdf
+procogia_opportunities_export_v*.xlsx
+github\ workflow\ run*.txt
+github_run_*.txt
+reset-and-scrape\ run*.txt
+
+# Runtime artifacts
+data/*.db
+.pytest_cache/
+__pycache__/
+*.pyc
+.env
+
+# Chat logs and session files
+.claude/*.md
+.claude/projects/
+
+# macOS metadata
+.DS_Store
+**/.DS_Store

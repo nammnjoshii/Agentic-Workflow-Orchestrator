@@ -1,0 +1,82 @@
+name: Test BCBid Alternative Scrapers
+
+on:
+  workflow_dispatch:
+
+# No concurrency group — these are diagnostic tests, not pipeline runs.
+# They won't block or be blocked by daily_scrape or bcbid_scrape.
+
+jobs:
+  test-nodriver:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Install Chrome and nodriver
+        # Install system Chrome so nodriver doesn't try to auto-download a binary.
+        # GitHub Actions ubuntu-latest has google-chrome-stable pre-installed.
+        run: |
+          pip install nodriver
+          google-chrome-stable --version || sudo apt-get install -y google-chrome-stable
+
+      - name: Run nodriver BCBid test
+        run: python scripts/test_nodriver_bcbid.py
+        env:
+          BCBID_SESSION: ${{ secrets.BCBID_SESSION }}
+
+  test-proxy:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Cache Patchright Chromium
+        uses: actions/cache@v4
+        with:
+          path: ~/.cache/ms-playwright
+          key: patchright-${{ runner.os }}-v1
+
+      - name: Install patchright
+        run: |
+          pip install patchright
+          python -m patchright install chromium
+
+      - name: Run proxy BCBid test
+        # Runs without proxy if BCBID_PROXY_URL is not set (still useful baseline)
+        run: python scripts/test_proxy_bcbid.py
+        env:
+          BCBID_SESSION: ${{ secrets.BCBID_SESSION }}
+          BCBID_PROXY_URL: ${{ secrets.BCBID_PROXY_URL }}
+
+  test-brightdata:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Install standard Playwright
+        # Bright Data Scraping Browser connects via CDP — uses standard playwright,
+        # not patchright (fingerprinting is handled by Bright Data's infrastructure).
+        run: |
+          pip install playwright
+          python -m playwright install chromium
+
+      - name: Run Bright Data BCBid test
+        # Skips gracefully if BRIGHT_DATA_WS_CDP secret is not set
+        run: python scripts/test_brightdata_bcbid.py
+        env:
+          BCBID_SESSION: ${{ secrets.BCBID_SESSION }}
+          BRIGHT_DATA_WS_CDP: ${{ secrets.BRIGHT_DATA_WS_CDP }}

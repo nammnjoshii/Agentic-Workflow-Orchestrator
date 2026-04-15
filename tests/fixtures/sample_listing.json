@@ -1,0 +1,9 @@
+{
+  "title": "Snowflake Data Warehouse Analytics Platform",
+  "org": "BC Hydro",
+  "deadline": "2026-06-01",
+  "value": "$500,000",
+  "url": "https://www.merx.com/rfp/bc-hydro-snowflake-2026",
+  "source": "MERX",
+  "raw_description": "BC Hydro seeks a qualified vendor to design, implement, and support a modern cloud-based data warehouse and analytics platform using Snowflake. The successful proponent will deliver ETL/ELT pipeline development, Power BI dashboard integration, data governance frameworks, and ongoing platform administration. The engagement will support enterprise-wide reporting and advanced analytics across finance, operations, and customer experience domains."
+}

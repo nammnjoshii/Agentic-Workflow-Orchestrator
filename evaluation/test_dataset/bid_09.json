@@ -1,0 +1,22 @@
+{
+  "bid_id": "bid_09",
+  "title": "Road Infrastructure Condition Assessment and Asset Management",
+  "org": "City of Kelowna",
+  "deadline": "2026-06-15",
+  "value": "$350,000",
+  "url": "https://eval.dataset.local/rfp/bid_09",
+  "source": "BidsAndTenders",
+  "raw_description": "The City of Kelowna Public Works Department requires a civil engineering firm to conduct a comprehensive road infrastructure condition assessment. Deliverables include: pavement condition index surveys for 500km of roads, culvert and drainage assessments, bridge load ratings, GIS mapping of asset inventory, and a 10-year capital maintenance plan. The vendor must hold a Professional Engineer (P.Eng) designation in BC, carry appropriate professional liability insurance, and have experience with municipal asset management programs. Reporting will be delivered via ArcGIS dashboards.",
+  "ground_truth": {
+    "decision": "pass",
+    "min_score": null,
+    "max_score": 20,
+    "expected_risks": [
+      "civil engineering scope — Your Organization disqualifier",
+      "P.Eng designation required",
+      "physical infrastructure focus"
+    ],
+    "expected_capabilities": [],
+    "rationale": "Clear disqualifier: civil engineering and physical infrastructure assessment. P.Eng required. No data analytics or BI content beyond incidental ArcGIS use. Should be rejected at qualification with very low score."
+  }
+}

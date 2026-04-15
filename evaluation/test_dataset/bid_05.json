@@ -1,0 +1,29 @@
+{
+  "bid_id": "bid_05",
+  "title": "Cloud Data Integration and ETL Pipeline Development Services",
+  "org": "SaskBuilds and Procurement",
+  "deadline": "2026-05-20",
+  "value": "$300,000",
+  "url": "https://eval.dataset.local/rfp/bid_05",
+  "source": "SaskTenders",
+  "raw_description": "Saskatchewan Ministry of SaskBuilds seeks a data integration specialist to develop and maintain cloud ETL pipelines connecting 8 operational source systems (Oracle EBS, MS Dynamics, Salesforce) to a Snowflake data warehouse. Specific requirements: Apache Airflow or Azure Data Factory for orchestration, dbt for transformation layer, automated data quality checks, schema change monitoring, and incremental load logic. Deliverables: production pipeline code (Python), Airflow DAGs, dbt models, data dictionary, and runbook documentation. Must have proven Snowflake integration experience and CI/CD pipeline deployment on Azure DevOps.",
+  "ground_truth": {
+    "decision": "bid",
+    "min_score": 70,
+    "max_score": null,
+    "expected_risks": [
+      "multi-source integration complexity",
+      "Oracle EBS legacy system risk"
+    ],
+    "expected_capabilities": [
+      "ETL/ELT pipelines",
+      "Snowflake",
+      "dbt",
+      "Apache Airflow",
+      "Azure Data Factory",
+      "Python",
+      "Azure DevOps"
+    ],
+    "rationale": "Direct capability match — ETL, Snowflake, dbt, Airflow are Your Organization primary skills. Saskatchewan is adjacent to Your Organization's Alberta target market. $300K is a clean engagement size."
+  }
+}

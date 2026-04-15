@@ -1,0 +1,78 @@
+name: Daily RFP Scrape
+
+on:
+  schedule:
+    - cron: '0 15 * * 1'   # 7 AM PT Monday
+    - cron: '0 15 * * 4'   # 7 AM PT Thursday
+  workflow_dispatch:
+
+concurrency:
+  group: pipeline
+
+jobs:
+  scrape:
+    runs-on: ubuntu-latest
+    env:
+      FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true
+    permissions:
+      actions: read
+      contents: read
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - run: pip install -r requirements.txt
+
+      - run: playwright install chromium
+
+      - run: python main.py
+        env:
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+          RESEND_API_KEY: ${{ secrets.RESEND_API_KEY }}
+          DIGEST_SENDER: ${{ secrets.DIGEST_SENDER }}
+          DIGEST_RECIPIENT: ${{ secrets.DIGEST_RECIPIENT }}
+          HUNTER_API_KEY: ${{ secrets.HUNTER_API_KEY }}
+          SERPAPI_KEY: ${{ secrets.SERPAPI_KEY }}
+          APOLLO_API_KEY: ${{ secrets.APOLLO_API_KEY }}
+          AGENT_TIMEOUT_SECONDS: 120
+          SKIP_BCBID: 'true'           # BCBid runs in dedicated weekly workflow (bcbid_scrape.yml)
+          BIDS_AND_TENDERS_LOGIN: ${{ secrets.BIDS_AND_TENDERS_LOGIN }}
+          BIDS_AND_TENDERS_PASSWORD: ${{ secrets.BIDS_AND_TENDERS_PASSWORD }}
+          BIDSCANADA_LOGIN: ${{ secrets.BIDSCANADA_LOGIN }}
+          BIDSCANADA_PASSWORD: ${{ secrets.BIDSCANADA_PASSWORD }}
+          CanadaTenders_LOGIN: ${{ secrets.CanadaTenders_LOGIN }}
+          CanadaTenders_PASSWORD: ${{ secrets.CanadaTenders_PASSWORD }}
+
+      - name: Inspect DB state
+        run: |
+          python - <<'EOF'
+          import sqlite3, os
+          db = os.environ.get("DB_PATH", "data/opportunities.db")
+          if not os.path.exists(db):
+              print("DB not found")
+          else:
+              conn = sqlite3.connect(db)
+              rows = conn.execute(
+                  "SELECT recommendation, COUNT(*) FROM opportunities GROUP BY recommendation"
+              ).fetchall()
+              total = conn.execute("SELECT COUNT(*) FROM opportunities").fetchone()[0]
+              unsent = conn.execute(
+                  "SELECT COUNT(*) FROM opportunities WHERE sent_in_digest=0 AND recommendation IN ('PURSUE','CONSIDER')"
+              ).fetchone()[0]
+              print(f"Total opportunities: {total}")
+              for rec, cnt in rows:
+                  print(f"  {rec}: {cnt}")
+              print(f"Unsent PURSUE/CONSIDER (digest-ready): {unsent}")
+          EOF
+
+      - uses: actions/upload-artifact@v4
+        with:
+          name: opportunity-db
+          path: data/opportunities.db
+          retention-days: 90
+          overwrite: true
+          if-no-files-found: warn

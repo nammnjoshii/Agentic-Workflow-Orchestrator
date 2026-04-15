@@ -1,0 +1,30 @@
+{
+  "bid_id": "bid_03",
+  "title": "Data Science and Machine Learning Platform for Health Analytics",
+  "org": "BC Ministry of Health",
+  "deadline": "2026-07-01",
+  "value": "$1,200,000",
+  "url": "https://eval.dataset.local/rfp/bid_03",
+  "source": "BCBid",
+  "raw_description": "The BC Ministry of Health requires a vendor to deliver a cloud-native data science and ML platform for population health analytics. Key deliverables: (1) Azure ML or Databricks environment setup with MLOps pipeline, (2) predictive modelling for hospital readmission and ER wait-time forecasting, (3) Snowflake data warehouse for clinical data aggregation, (4) Power BI executive dashboards, (5) privacy-preserving analytics framework compliant with FOIPPA and PHIPA. The vendor must have demonstrated experience with health data in BC or Canadian federal contexts, Databricks certifications, and Python-based ML model development.",
+  "ground_truth": {
+    "decision": "bid",
+    "min_score": 78,
+    "max_score": null,
+    "expected_risks": [
+      "FOIPPA/PHIPA compliance complexity",
+      "health data sensitivity",
+      "large contract scope risk"
+    ],
+    "expected_capabilities": [
+      "Databricks",
+      "Azure ML",
+      "MLOps",
+      "Snowflake",
+      "Power BI",
+      "Python ML",
+      "data governance"
+    ],
+    "rationale": "Excellent match — Databricks, Azure ML, Snowflake, Power BI, and ML modelling are Your Organization strengths. BC Ministry of Health is a high-value provincial client. Contract value ($1.2M) is large but within range. FOIPPA compliance adds risk but Your Organization has BC public sector experience."
+  }
+}

@@ -1,0 +1,66 @@
+name: Reset DB and Fresh Scrape
+
+on:
+  workflow_dispatch:   # manual trigger only — never runs on a schedule
+
+concurrency:
+  group: pipeline
+
+jobs:
+  reset-and-scrape:
+    runs-on: ubuntu-latest
+    env:
+      FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true
+    permissions:
+      actions: read
+      contents: read
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - run: pip install -r requirements.txt
+
+      - run: playwright install chromium
+
+      - name: Cache Camoufox binary
+        uses: actions/cache@v4
+        with:
+          path: ~/.camoufox
+          key: camoufox-${{ runner.os }}-v1
+
+      - name: Fetch Camoufox browser (if not cached)
+        run: python -m camoufox fetch
+
+      # No artifact download — intentionally starting with an empty DB
+
+      - name: Delete stale DB if present
+        run: rm -f data/opportunities.db
+
+      - name: Run fresh scrape
+        run: python main.py
+        env:
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+          RESEND_API_KEY: ${{ secrets.RESEND_API_KEY }}
+          DIGEST_SENDER: ${{ secrets.DIGEST_SENDER }}
+          DIGEST_RECIPIENT: ${{ secrets.DIGEST_RECIPIENT }}
+          HUNTER_API_KEY: ${{ secrets.HUNTER_API_KEY }}
+          SERPAPI_KEY: ${{ secrets.SERPAPI_KEY }}
+          AGENT_TIMEOUT_SECONDS: 120
+          BIDS_AND_TENDERS_LOGIN: ${{ secrets.BIDS_AND_TENDERS_LOGIN }}
+          BIDS_AND_TENDERS_PASSWORD: ${{ secrets.BIDS_AND_TENDERS_PASSWORD }}
+          BIDSCANADA_LOGIN: ${{ secrets.BIDSCANADA_LOGIN }}
+          BIDSCANADA_PASSWORD: ${{ secrets.BIDSCANADA_PASSWORD }}
+          CanadaTenders_LOGIN: ${{ secrets.CanadaTenders_LOGIN }}
+          CanadaTenders_PASSWORD: ${{ secrets.CanadaTenders_PASSWORD }}
+
+      - uses: actions/upload-artifact@v4
+        with:
+          name: opportunity-db
+          path: data/opportunities.db
+          retention-days: 90
+          overwrite: true
+          if-no-files-found: warn

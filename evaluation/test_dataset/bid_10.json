@@ -1,0 +1,30 @@
+{
+  "bid_id": "bid_10",
+  "title": "Marketing Analytics and Customer Data Platform Implementation",
+  "org": "BC Lottery Corporation",
+  "deadline": "2026-07-30",
+  "value": "$420,000",
+  "url": "https://eval.dataset.local/rfp/bid_10",
+  "source": "MERX",
+  "raw_description": "BC Lottery Corporation (BCLC) seeks a vendor to implement a Customer Data Platform (CDP) and marketing analytics capability. Deliverables: (1) CDP implementation (Segment or mParticle) integrating online gaming, retail lottery, and PlayNow digital channels, (2) marketing attribution modelling in Snowflake, (3) audience segmentation for CRM campaigns, (4) real-time Power BI dashboards for marketing performance, (5) A/B testing framework. The vendor must have demonstrated CDP implementation experience, Snowflake expertise, and understanding of responsible gambling regulatory requirements. Python or R-based statistical modelling experience required.",
+  "ground_truth": {
+    "decision": "bid",
+    "min_score": 65,
+    "max_score": null,
+    "expected_risks": [
+      "responsible gambling regulatory requirements",
+      "gaming industry compliance",
+      "CDP implementation specialization"
+    ],
+    "expected_capabilities": [
+      "Snowflake",
+      "Power BI",
+      "Python",
+      "R",
+      "statistical modelling",
+      "CDP",
+      "marketing analytics"
+    ],
+    "rationale": "Good match on Snowflake, Power BI, Python/R statistical modelling. BCLC is a Crown corporation — ideal Your Organization client profile. CDP is adjacent to Your Organization capabilities. Regulatory context manageable."
+  }
+}

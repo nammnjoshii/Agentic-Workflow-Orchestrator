@@ -1,0 +1,26 @@
+{
+  "bid_id": "bid_06",
+  "title": "IT Systems Modernization and Reporting Improvement",
+  "org": "City of Surrey",
+  "deadline": "2026-06-30",
+  "value": "$200,000",
+  "url": "https://eval.dataset.local/rfp/bid_06",
+  "source": "BidsAndTenders",
+  "raw_description": "The City of Surrey is seeking a technology consulting firm to assess and improve its IT reporting capabilities across finance and operations departments. The engagement includes a current-state assessment of existing reporting tools (Excel, Access, Crystal Reports), recommendations for a modern reporting platform, limited proof-of-concept dashboard development (3–5 dashboards), and a technology roadmap. The vendor should have broad IT consulting experience, familiarity with municipal operations, and the ability to present technical findings to non-technical executives. Experience with Power BI is an asset but not a requirement.",
+  "ground_truth": {
+    "decision": "bid",
+    "min_score": 58,
+    "max_score": null,
+    "expected_risks": [
+      "small contract scope",
+      "limited data analytics depth",
+      "competitive generalist vendors"
+    ],
+    "expected_capabilities": [
+      "Power BI",
+      "IT consulting",
+      "reporting modernization"
+    ],
+    "rationale": "Partial match — Power BI is relevant but scope is general IT consulting. Small value ($200K) and limited analytics depth make this a CONSIDER rather than strong PURSUE. Your Organization may be over-qualified."
+  }
+}

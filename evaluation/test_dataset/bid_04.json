@@ -1,0 +1,30 @@
+{
+  "bid_id": "bid_04",
+  "title": "Enterprise Data Governance and Metadata Management Platform",
+  "org": "Government of Alberta",
+  "deadline": "2026-06-01",
+  "value": "$550,000",
+  "url": "https://eval.dataset.local/rfp/bid_04",
+  "source": "AlbertaPurchasing",
+  "raw_description": "Alberta Treasury Board and Finance is seeking a vendor to implement an enterprise data governance framework and metadata management platform. Deliverables include: deployment of Collibra or Alation data catalogue, definition of data ownership policies across 15 departments, lineage tracking from source systems (SAP, Salesforce) to reporting layer (Power BI), data quality scoring automation, and a stewardship operating model. The vendor must have experience with large-scale government data governance programs, integration of data catalogue with cloud data platforms (Snowflake or Azure Synapse), and executive stakeholder management.",
+  "ground_truth": {
+    "decision": "bid",
+    "min_score": 73,
+    "max_score": null,
+    "expected_risks": [
+      "multi-department coordination",
+      "long implementation timeline",
+      "procurement bureaucracy"
+    ],
+    "expected_capabilities": [
+      "data governance",
+      "Collibra",
+      "Alation",
+      "Snowflake",
+      "Azure Synapse",
+      "Power BI",
+      "SAP integration"
+    ],
+    "rationale": "Strong match on data governance, Snowflake/Synapse, Power BI, and SAP integration. Government of Alberta is Your Organization's secondary target geography. $550K is well within target range."
+  }
+}

@@ -1,0 +1,30 @@
+{
+  "bid_id": "bid_07",
+  "title": "Healthcare Data Analytics and Population Health Reporting",
+  "org": "Fraser Health Authority",
+  "deadline": "2026-07-15",
+  "value": "$480,000",
+  "url": "https://eval.dataset.local/rfp/bid_07",
+  "source": "BCBid",
+  "raw_description": "Fraser Health Authority requires a vendor to build population health analytics dashboards integrating data from multiple clinical systems (Epic EHR, lab systems, pharmacy data). Deliverables include: Tableau or Power BI dashboards for 6 clinical programs, data integration layer connecting Epic HL7 FHIR APIs to a central analytics store, automated metric calculation for 30+ population health KPIs, and self-service reporting for clinical managers. FOIPPA and PHIPA compliance is mandatory. The vendor must demonstrate prior work with health authority data and clinical analytics.",
+  "ground_truth": {
+    "decision": "bid",
+    "min_score": 65,
+    "max_score": null,
+    "expected_risks": [
+      "Epic EHR integration complexity",
+      "FOIPPA/PHIPA compliance",
+      "clinical data sensitivity",
+      "health authority procurement process"
+    ],
+    "expected_capabilities": [
+      "Power BI",
+      "Tableau",
+      "data integration",
+      "HL7 FHIR",
+      "self-service analytics",
+      "healthcare analytics"
+    ],
+    "rationale": "Good match on BI tools and data integration. Healthcare context adds compliance risk but Fraser Health is a major BC client. $480K is a solid engagement. HL7 FHIR integration is specialized."
+  }
+}
