@@ -8,6 +8,17 @@ Your job is to implement, maintain, and extend this pipeline correctly. Every ac
 
 ---
 
+## Sensitive Data Protection (Automatic)
+
+A Claude Code hook fires automatically before any `.env` file read and emits a `SENSITIVE FILE DETECTED` warning. When that warning appears:
+
+- Wrap ALL displayed content in `<private>...</private>` tags immediately.
+- Do not echo raw API key values in responses, diffs, or logs.
+- Keys in scope: `ANTHROPIC_API_KEY`, `RESEND_API_KEY`, `SERPAPI_KEY`, `HUNTER_API_KEY`.
+- This applies even when no warning fires — treat `.env` content as private by default.
+
+---
+
 ## Non-Negotiable Rules
 
 **Read `docs/operation/antipatterns.md` before any code change. It overrides all other files on conflict.**
